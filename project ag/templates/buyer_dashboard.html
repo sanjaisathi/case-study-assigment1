@@ -1,0 +1,25 @@
+<h2>Available Products</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Seller</th>
+            <th>Seller Contact</th> <!-- New column for contact -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.seller }}</td>
+                <td>{{ product.contact }}</td> <!-- Display contact -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

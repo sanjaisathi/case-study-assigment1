@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="edit">
+
+<div class="container">
+    <h1>Edit Product: {{ product.name }}</h1>
+
+    <form action="/edit_product/{{ product.name }}" method="POST">
+        <label for="description">Description</label>
+        <input type="text" name="description" value="{{ product.description }}" required>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" value="{{ product.price }}" required>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" value="{{ product.quantity }}" required>
+
+        <button type="submit">Update Product</button>
+    </form>
+
+    <a href="/dashboard">Back to Dashboard</a>
+</div>
+
+</body>
+</html>
